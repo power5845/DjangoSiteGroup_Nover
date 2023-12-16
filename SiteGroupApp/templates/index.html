@@ -1,0 +1,308 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="applicable-device" content="pc,mobile" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit">
+<title>{{ title }}</title>
+<meta name="keywords" content="免费小说网,小说网,言情小说,都市小说,玄幻小说,网游小说,历史军事小说,武侠小说,科幻小说,全本小说" />
+<meta name="description" content="免费小说网为小说爱好者提供各类免费全本小说上百万本。包括言情小说，穿越小说，玄幻小说，校园小说，都市小说，武侠小说，网游小说等等。只有想不到，没有找不到！" />
+<meta name="apple-mobile-web-app-title" content="免费小说网">
+
+<link rel="stylesheet" data-ignore="true" href="{% static 'css/index.css' %}">
+<script>
+	var userlogin = 0;
+</script>
+<script async type="text/javascript" src="{% static 'js/iconfont.0.6.js' %}" data-ignore="true"></script>
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/common.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/history.js' %}"></script>
+
+
+</head>
+<body style="zoom: 1;">
+<div class="page">
+<!-- start header -->
+<div class="g_header fs16">
+	<div class="g_wrap cf">
+		<div class="fl">
+			<a  href="/" title="免费小说网" class="g_logo"><h1 class="hide">LOL故事板</h1><svg><use xlink:href="#i-logo"></use></svg></a>
+			<div  class="g_hd_link g_menu g_drop_sel">
+				<strong class="_hd"><svg><use xlink:href="#i-browse"></use></svg><span><a class="bhn" href="javascript:;">分类</a></span></strong>
+				<p class="_bd">
+					<a href="/xuanhuan" title="战士"><svg><use xlink:href="#i-xuanhuan"></use></svg><span>战士</span></a>
+					<a href="/wuxia" title="法师"><svg><use xlink:href="#i-xianxia"></use></svg><span>法师</span></a>
+					<a href="/lishi" title="刺客"><svg><use xlink:href="#i-lishi"></use></svg><span>刺客</span></a>
+					<a href="/dushi" title="射手"><svg><use xlink:href="#i-yanqing"></use></svg><span>射手</span></a>
+					<a href="/kehuan" title="辅助"><svg><use xlink:href="#i-kehuan"></use></svg><span>辅助</span></a>
+				</p>
+			</div>
+			<div  class="g_hd_link g_menu g_drop_sel">
+				<strong class="_hd"><svg><use xlink:href="#i-wenxue"></use></svg><span><a class="bhn" href="javascript:;">排行</a></span></strong>
+				<p class="_bd">
+					<a href="/rank/top_allvisit/" title="点击榜"><svg><use xlink:href="#i-top100"></use></svg><span>点击榜</span></a>
+					<a href="/rank/top_goodnum/" title="收藏榜"><svg><use xlink:href="#i-zhihuirensheng"></use></svg><span>收藏榜</span></a>
+					<a href="/rank/top_allvote/" title="推荐榜"><svg><use xlink:href="#i-lishiyanyun"></use></svg><span>推荐榜</span></a>
+				</p>
+			</div>
+
+		</div>
+	</div>
+</div>
+<!-- end header -->
+
+
+<div class="hom-banner pr oh">
+	<a href="#" class="hom-slide _on" style="background-image:url({% static 'images/hot-banner.jpg' %})"></a>
+</div>
+<!-- end home-banner -->
+<div class="hom-bd pr" id="imgload">
+	<!-- start continue reading -->
+	<div class="j_reading_wrap"></div>
+		<div class="cf g_wrap" id="disn">
+			<h2 class="hom-h1 fl">继续阅读</h2>
+				<a href="/history.html" class="fl ml20 mt20 fs16 ttl">more<i class="i-more"></i></a>
+			<div id="history"></div>
+				<script type="text/javascript">history();</script>
+	<!-- end continue reading -->
+	<!-- start New Arrivals -->
+		</div>
+	<!--start 广告 -->
+	<!--end 广告 -->
+	<div class="cf g_wrap">
+		<h2 class="hom-h1 fl">周免英雄</h2>
+		<a href="/top_allvote/1.html" class="fl ml20 mt20 fs16 ttl">more<i class="i-more"></i></a>
+	</div>
+	<ul class="g_row hom-books hom-gutter hom-arr">
+		{% for data in datas|slice:'0:6' %}
+		<li class="g_col_2">
+			<a href="{{ data.hero_url }}" title="红楼之黛玉后妈不好当">
+		<i class="g_thumb hom-thumb"><img _src="{{ data.hero_img_url_small }}" width="140" height="186" src="https://www.493d.com/modules/article/images/nocover.jpg"  alt="{{ data.hero_title }}"></i>
+		<h3 class="hom-h2" style="word-wrap: break-word;">{{ data.hero_title }}</h3>
+	</a>
+	<span class="_type">{{ data.hero_Profession }}</span>
+		</li>
+		{% endfor %}
+
+
+
+	</ul>
+	<h2 class="g_wrap hom-h1">女生推荐</h2>
+	<ul class="g_row hom-rec hom-books hom-gutter pt5">
+
+
+<li class="g_col_4 hom-rec-1st">
+	<div class="p20">
+		<a href="{{ datas.7.hero_url }}" title="九星天辰诀">
+			<span class="g_thumb hom-thumb">
+				<img _src="{{ datas.7.hero_img_url_small }}" width="180" height="240" src="https://www.493d.com/modules/article/images/nocover.jpg"  alt="九星天辰诀" style="display: block;">
+				<i></i>
+				<span></span>
+			</span>
+			<h3 class="hom-h3 ell" style="word-wrap: break-word; white-space: normal;">{{ datas.7.hero_title }}</h3>
+		</a>
+		<span class="db mb15 ttc c_small">{{ datas.7.hero_Profession }}</span>
+		<!-- <strong class="g_score mb5 g_score_4 g_score_half"><i></i><small>4.6</small></strong> -->
+		<p class="fs16 lh1d5 c_strong g_ells" style="word-wrap: break-word;">    深埋地心的地底琼楼， 沧海桑田演化的死冥湖， 诡异神秘的幽冥宫， 喂饲冥魂的禁域之地， 帝国争霸，世家、宗门林立， 人类、妖..</p>
+	</div>
+</li>
+
+{% for data in datas|slice:"8:16" %}
+<li class="g_col_2 mb20">
+	<a href="{{ data.hero_url }}" title="清穿之福运小公主">
+		<i class="g_thumb hom-thumb"><img _src="{{ data.hero_img_url_small }}" width="140" height="186" alt="清穿之福运小公主" style="display: block;"></i>
+		<h3 class="hom-h2" style="word-wrap: break-word;">{{ data.hero_title }}</h3>
+	</a>
+	<span class="_type">{{ data.hero_Profession }}</span>
+</li>
+{% endfor %}
+	</ul>
+	<!-- end Recommended -->
+	<!--start 广告 -->
+	<!--end 广告 -->
+	<h2 class="g_wrap hom-h1">男生推荐</h2>
+	<ul class="g_row hom-rec hom-books hom-gutter pt5">
+
+<li class="g_col_4 hom-rec-1st">
+	<div class="p20">
+		<a href="{{ datas.17.hero_url }}" title="纵横虚空">
+			<span class="g_thumb hom-thumb">
+				<img _src="{{ datas.17.hero_img_url_small }}" width="180" height="240" src="https://www.493d.com/modules/article/images/nocover.jpg"  alt="纵横虚空" style="display: block;">
+				<i></i>
+				<span></span>
+			</span>
+			<h3 class="hom-h3 ell" style="word-wrap: break-word; white-space: normal;">{{ datas.17.hero_title }}</h3>
+		</a>
+		<span class="db mb15 ttc c_small">{{ datas.17.hero_Profession }}</span>
+		<!-- <strong class="g_score mb5 g_score_4 g_score_half"><i></i><small>4.6</small></strong> -->
+		<p class="fs16 lh1d5 c_strong g_ells" style="word-wrap: break-word;">    关于纵横虚空：我本就是天才，奈何神龙被困马厩；虚空戒灵认主，纯阳之躯震撼出世；炼《纯阳全本》，建镇虚宗。为爱人，踩帝国，..</p>
+	</div>
+</li>
+{% for data in datas|slice:"18:26" %}
+<li class="g_col_2 mb20">
+	<a href="{{ data.hero_url }}" title="我們的色情">
+		<i class="g_thumb hom-thumb"><img _src="{{ data.hero_img_url_small }}" width="140" height="186" alt="我們的色情" style="display: block;"></i>
+		<h3 class="hom-h2" style="word-wrap: break-word;">{{ data.hero_title }}</h3>
+	</a>
+	<span class="_type">{{ data.hero_Profession }}</span>
+</li>
+{% endfor %}
+	</ul>
+	<h2 class="g_wrap hom-h1">赛季新星</h2>
+	<ul class="g_row hom-rec hom-books hom-gutter pt5">
+
+<li class="g_col_4 hom-rec-1st">
+	<div class="p20">
+		<a href="{{ datas.27.hero_url }}" title="禁斷╳孿生&nbsp;&nbsp;開始，無法拒絕的關係">
+			<span class="g_thumb hom-thumb">
+				<img _src="{{ datas.27.hero_img_url_small }}" width="180" height="240" src="https://www.493d.com/modules/article/images/nocover.jpg"  alt="禁斷╳孿生&nbsp;&nbsp;開始，無法拒絕的關係" style="display: block;">
+				<i></i>
+				<span></span>
+			</span>
+			<h3 class="hom-h3 ell" style="word-wrap: break-word; white-space: normal;">{{ datas.27.hero_title }}</h3>
+		</a>
+		<span class="db mb15 ttc c_small">{{ datas.27.hero_Profession }}</span>
+		<!-- <strong class="g_score mb5 g_score_4 g_score_half"><i></i><small>4.6</small></strong> -->
+		<p class="fs16 lh1d5 c_strong g_ells" style="word-wrap: break-word;">    她的初吻，是被哥哥所奪走的。她的初夜，也是給了他。《禁斷╳孿生》總共分為三部曲：第一部 開始，開始，無法拒絕的關係第二部 ..</p>
+	</div>
+</li>
+{% for data in datas|slice:'28:36' %}
+<li class="g_col_2 mb20">
+	<a href="{{ data.hero_url }}" title="樓梯，與那男人">
+		<i class="g_thumb hom-thumb"><img _src="{{ data.hero_img_url_small }}" width="140" height="186" alt="樓梯，與那男人" style="display: block;"></i>
+		<h3 class="hom-h2" style="word-wrap: break-word;">{{ data.hero_title }}</h3>
+	</a>
+	<span class="_type">{{ data.hero_Profession }}</span>
+</li>
+{% endfor %}
+	</ul>
+	<!-- start popular -->
+	<div class="cf g_wrap">
+		<h2 class="hom-h1 fl">最受欢迎</h2>
+		<a href="/top_allvisit/" class="fl ml20 mt20 fs16 ttl">more<i class="i-more"></i></a>
+	</div>
+	<div class="g_thumb_list">
+	<ul class="g_row hom-books hom-gutter hom-pop">
+{% for data in datas|slice:'37:43' %}
+<li class="g_col_2">
+	<a href="{{ data.hero_url }}" title="贴身丫鬟（np）">
+		<i class="g_thumb hom-thumb"><img _src="{{ data.hero_img_url_small }}" alt="贴身丫鬟（np）" src="https://www.493d.com/modules/article/images/nocover.jpg" style="display: block;"><span class="fwb pa t0 l0  _num _num1" style="display: none;">1</span></i>
+		<h3 class="hom-h2" style="word-wrap: break-word;">{{ data.hero_title }}</h3>
+	</a>
+	<span class="_type mb5 ttc">{{ data.hero_Profession }}</span>
+</li>
+{% endfor %}
+	</ul>
+	</div>
+	<!-- end popular -->
+	<!-- start classify -->
+	<p class="g_wrap hom-cla tac fs24 cf hom-gutter">
+		<a href="/wuxia/1.html" class="g_td_4_1 _big" title="武侠仙侠">
+			<img alt="武侠仙侠" _src="{% static 'picture/1.0.1.jpg' %}" width="auto" height="200" style="display: block;">
+			<span><i><svg><use xlink:href="#i-xianxia"></use></svg></i><strong class="f_mbo">武侠仙侠</strong></span>
+			<s></s>
+		</a>
+		<span class="g_td_4_1">
+			<a href="/youxi/1.html" class="_small" title="游戏竞技">
+				<img alt="游戏竞技" _src="{% static 'picture/2.0.1.jpg' %}" width="auto" height="100" style="display: block;">
+				<span><i><svg><use xlink:href="#i-youxi"></use></svg></i><strong class="f_mbo">游戏竞技</strong></span>
+				<s></s>
+			</a>
+			<a href="/lingyi/1.html" class="_small" title="鬼怪灵异">
+				<img alt="鬼怪灵异" _src="{% static 'picture/3.0.1.jpg' %}" width="auto" height="100" style="display: block;">
+				<span><i><svg><use xlink:href="#i-kehuan"></use></svg></i><strong class="f_mbo">鬼怪灵异</strong></span>
+				<s></s>
+			</a>
+		</span>
+		<a href="/xuanhuan/1.html" class="g_td_4_1 _big" title="玄幻奇幻">
+			<img alt="玄幻奇幻" _src="{% static 'picture/4.0.1.jpg' %}" width="auto" height="200" style="display: block;">
+			<span><i><svg><use xlink:href="#i-xuanhuan"></use></svg></i><strong class="f_mbo">玄幻奇幻</strong></span>
+			<s></s>
+		</a>
+		<span class="g_td_4_1">
+			<a href="/dushi/1.html" class="_small" title="都市生活">
+				<img alt="都市生活" _src="{% static 'picture/5.0.1.jpg' %}" width="auto" height="100" style="display: block;">
+				<span><i><svg><use xlink:href="#i-dushi"></use></svg></i><strong class="f_mbo">都市生活</strong></span>
+				<s></s>
+			</a>
+			<a href="/lishi/1.html" class="_small" title="历史军事">
+				<img alt="历史军事" _src="{% static 'picture/6.0.1.jpg' %}" width="auto" height="100" style="display: block;">
+				<span><i><svg><use xlink:href="#i-lishi"></use></svg></i><strong class="f_mbo">历史军事</strong></span>
+				<s></s>
+			</a>
+		</span>
+	</p>
+	<!-- end classify -->
+</div>
+<!--start 广告 -->
+<!--end 广告 -->
+<!-- start Latest -->
+<h2 class="g_wrap hom-h1">常驻英雄</h2>
+<div class="g_wrap hom-gutter">
+	<table class="w100p m-update">
+		<thead>
+			<tr class="c_small">
+				<th class="_f">职业</th>
+				<th>英雄标题</th>
+				<th class="_re">英雄姓名</th>
+				<th class="_au">是否周免</th>
+			</tr>
+		</thead>
+		<tbody>
+{% for data in datas|slice:'44:65' %}
+<tr>
+	<td class="_f"><span class="_gen c_small">{{data.hero_profession}}</span></td>
+	<td><a href="{{ data.hero_url }}" class="_tit f_serif c_strong fs16" title="如意凤凰【仙侠，伪叔侄，高H】">{{ data.hero_name }}</a></td>
+	<td class="_re"><span>{{ data.hero_title }}</span></td>
+	{% if not data.is_week_free %}
+	<td class="_au"><span>本周周免</span></td>
+	{% endif %}
+	{% if data.is_week_free %}
+	<td class="_au"><span>非周免</span></td>
+	{% endif %}
+</tr>
+{% endfor %}
+		</tbody>
+	</table>
+</div>
+</div>
+<!-- end Latest -->
+<!-- end Latest -->
+
+<!-- start footer -->
+<div class="g_footer">
+	<div class="g_row">
+		<div class="g_col_9">
+			<p class="g_hide">本站所有小说作品均来自网友上传或转载于其他网站，版权属于原创作者</p>
+			<p class="g_hide">如侵犯了您的权利，请与本站联系，本站将立刻删除（www.493d.com）</p>
+			<p>免费小说网</p>
+		</div>
+	</div>
+</div>
+<!-- end footer -->
+<div class="g_goTop _on" style="display: none;"><a href="javascript:;" class="t_on"><svg><use xlink:href="#i-goTop"></use></svg></a></div>
+<script async type="text/javascript" src="https://www.493d.com/Style/js/transform.js"></script><script>tj();</script>
+
+<div style="display: none;"><script src="/scripts/autopusher.js"></script></div>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+</html>
